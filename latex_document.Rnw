@@ -1,0 +1,60 @@
+\documentclass{article}
+
+
+
+<<gegevens_preamble, echo=FALSE, message=FALSE, warning=FALSE>>=
+
+# Jaar instellen
+Jaar <- 2019
+
+titel_header <- "Data SQ-48 afnames HSK"
+
+library(knitr)
+
+
+@
+
+
+
+\input{latex_hulpbestanden/standard_preamble.tex}
+
+\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor}
+
+% Titel die in de header gaat verschijnen
+\fancyhead[C]{\Sexpr{titel_header}} 
+
+
+
+
+
+<<R_scripts, echo=FALSE, message=FALSE, warning=FALSE>>=
+
+read_chunk(path = "voorbereiding.R")
+
+@
+
+<<voorbereiding, echo=FALSE, message=FALSE, warning=FALSE>>=
+
+
+@
+
+<<datum, echo=FALSE, message=FALSE, warning=FALSE>>=
+datum_creatie <- format(Sys.Date(), format = "%d-%m-%Y")
+
+
+@
+
+
+\author{Niels Kakes}
+\date{\Sexpr{datum_creatie}}
+
+\begin{document}
+
+\section*{Algemeen}
+
+
+
+
+
+\end{document}
